@@ -1,6 +1,6 @@
 #include <windows.h>
 
-const char g_szClassName[] = "myWindowClass";
+const char g_szClassName[] = "myWindowClass"; //main class
 
 // Step 4: the Window Procedure
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -35,7 +35,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     wc.hInstance     = hInstance;
     wc.hIcon         = LoadIcon(NULL, IDI_APPLICATION);
     wc.hCursor       = LoadCursor(NULL, IDC_ARROW);
-    wc.hbrBackground = (HBRUSH)(COLOR_WINDOW+1);
+    wc.hbrBackground = (HBRUSH)(GRAY_BRUSH); //window color
     wc.lpszMenuName  = NULL;
     wc.lpszClassName = g_szClassName;
     wc.hIconSm       = LoadIcon(NULL, IDI_APPLICATION);
@@ -51,7 +51,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     hwnd = CreateWindowEx(
         WS_EX_CLIENTEDGE,
         g_szClassName,
-        "The title of my window",
+        "Solid Snake",
         WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, CW_USEDEFAULT, 240, 120,
         NULL, NULL, hInstance, NULL);
